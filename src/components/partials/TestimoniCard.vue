@@ -1,19 +1,18 @@
 <script setup>
 
-defineProps({
+const props = defineProps({
   name: String,
   job: String,
   review: String,
   img: String
 })
-
 </script>
 
 <template>
   <div class="w-[48%] min-h-[220px] py-6 px-4 bg-white rounded-xl shadow container relative">
     <div class="relative flex flex-col items-center">
-      <div
-        :class="`user-image absolute w-[80px] h-[80px] border border-white rounded-full shadow-lg bg-[url('/images/testimonials/${img}')]`">
+      <div class="user-image absolute w-[80px] h-[80px] border border-white rounded-full shadow-lg"
+        :style="{ backgroundImage: `url(/images/testimonials/${img})` }">
       </div>
       <p class="text-[14px] text-[#a35e21] font-[400] mt-6 mb-4">
         {{ review }}
