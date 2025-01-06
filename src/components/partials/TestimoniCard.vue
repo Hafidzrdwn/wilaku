@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="w-[48%] min-h-[220px] py-6 px-4 bg-white rounded-xl shadow container relative">
+  <div class="w-[48%] min-h-[220px] py-6 px-4 bg-white rounded-xl shadow testimoni-card relative">
     <div class="relative flex flex-col items-center">
       <div class="user-image absolute w-[80px] h-[80px] border border-white rounded-full shadow-lg"
         :style="{ backgroundImage: `url(/images/testimonials/${img})` }">
@@ -34,7 +34,7 @@ const props = defineProps({
   background-repeat: no-repeat;
 }
 
-.container .user-biodata {
+.testimoni-card .user-biodata {
   position: absolute;
   bottom: 15px;
   left: 50%;

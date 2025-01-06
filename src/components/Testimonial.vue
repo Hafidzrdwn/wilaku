@@ -36,14 +36,14 @@ const users = ref([
 </script>
 
 <template>
-  <div id="containerTestimoni" class="relative w-full">
+  <div id="containerTestimoni" class="relative w-full z-[1]">
     <section id="testimonial" class="text-center py-14 h-max">
       <h2 class="mb-28 text-[30px] font-bold px-7 py-2 rounded-full inline-block bg-[#ffde59] text-[#8f6038]">
         Testimoni Pelanggan</h2>
 
       <div class="flex items-center justify-between px-16 content-container">
 
-        <div class="flex flex-wrap items-center justify-between w-[65%] testimonial-container">
+        <div class="flex flex-wrap items-center justify-between w-[65%] testimonial-container gap-y-[5rem]">
           <TestimoniCard v-for="user in users" :key="user.id" :name="user.name" :job="user.job" :review="user.review"
             :img="user.image" />
         </div>
@@ -52,25 +52,22 @@ const users = ref([
           <p class="text-[22px] font-[600] mb-7">Anda masih ragu dengan produk kami?
             Yuk kita ngobrol bersama</p>
           <a href="www.google.com"
-            class="btn-chat bg-[#ffb923] hover:bg-[#f7b934] transition-all text-[#a35e21] font-[600] text-center text-[17px]">
+            class="btn-chat inline-block w-full py-[10px] px-[20px] rounded-[25px] bg-[#ffb923] hover:bg-[#f7b934] transition-all text-[#a35e21] font-[600] text-center text-[17px]">
             Chat Admin <span class="transition-all ms-1">>></span>
           </a>
         </div>
       </div>
 
       <!-- chat icon -->
-      <img src="/images/illustration-testimoni.svg" class="absolute top-[170px] right-[375px] w-[75px] rotate-45"
+      <img src="/images/illustration-testimoni.svg"
+        class="testimoni-illustration absolute top-[170px] right-[375px] w-[75px] rotate-45"
         alt="testimoni illustration">
     </section>
-    <div class="bg-overlay"></div>
+    <div class="w-full bg-overlay absolute bottom-0 z-[-1] bg-[#ffde5999] h-[21em]"></div>
   </div>
 </template>
 
 <style scoped>
-#containerTestimoni {
-  z-index: 1;
-}
-
 #containerTestimoni::before {
   content: '';
   background-image: url('/images/bg-testimoni.webp');
@@ -84,27 +81,144 @@ const users = ref([
   z-index: -1;
 }
 
-.bg-overlay {
-  background: rgba(255, 222, 89, 0.6);
-  width: 100%;
-  height: 21em;
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-}
-
-.testimonial-container {
-  row-gap: 5rem;
-}
-
-.chat-box>.btn-chat {
-  display: inline-block;
-  width: 100%;
-  padding: 10px 20px;
-  border-radius: 25px;
-}
-
 .chat-box>.btn-chat:hover span {
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 1215px) {
+  .content-container {
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .testimonial-container {
+    width: 80%;
+  }
+
+  .chat-box {
+    width: 50%;
+    padding: 30px;
+  }
+
+  .chat-box>p {
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+  }
+
+  .testimoni-illustration {
+    top: 150px;
+    right: 75px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .testimonial-container {
+    width: 90%;
+  }
+
+  .chat-box {
+    width: 75%;
+    padding: 40px;
+  }
+
+  .chat-box>p {
+    width: 100%;
+  }
+
+  .testimoni-illustration {
+    top: 120px;
+    right: 50px;
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 922px) {
+  .testimonial-container {
+    width: 100%;
+  }
+
+  .testimoni-illustration {
+    top: 100px;
+    transform: rotate(35deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonial-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .testimoni-card {
+    flex: 0 1 80%;
+    padding: 25px 50px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .testimoni-illustration {
+    top: 130px;
+    width: 85px;
+  }
+
+  .chat-box {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .testimoni-card {
+    flex: 0 1 100%;
+  }
+
+  .testimoni-illustration {
+    top: 120px;
+    width: 75px;
+    right: 30px;
+  }
+
+  .chat-box {
+    padding: 30px;
+  }
+
+  .chat-box>p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .content-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .testimoni-illustration {
+    top: 130px;
+    width: 65px;
+    right: 25px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  h2 {
+    font-size: 22px;
+  }
+
+
+  .content-container {
+    padding: 0 20px 0;
+  }
+
+  .testimoni-card {
+    height: 260px;
+  }
+
+  .testimoni-illustration {
+    top: 140px;
+    width: 50px;
+  }
 }
 </style>
