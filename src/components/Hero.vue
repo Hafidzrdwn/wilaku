@@ -5,10 +5,10 @@
         <img class="hero-img" src="/images/hero-image.webp" alt="hero image">
       </div>
       <div
-        class="lg:h-[100vh] h-full lg:w-[45%] lg:pt-0 pt-10 w-full lg:absolute relative hero-detail lg:ps-16 lg:pe-0 md:px-10 sm:px-10 xs:px-5 flex flex-col justify-center">
+        class="lg:h-[100vh] h-full lg:w-[45%] lg:pt-0 pt-10 w-full lg:absolute relative hero-detail lg:ps-10 lg:pe-0 md:px-10 sm:px-10 xs:px-5 flex flex-col justify-center">
         <img class="lg:w-[275px] md:w-[250px] sm:w-[225px] xs:w-[200px]" src="/images/hero-logo.webp" alt="logo hero">
         <h4
-          class="lg:w-[88%] md:w-[70%] sm:w-[85%] xs:w-[100%] mt-10 mb-6 font-semibold text-[#a35e21] lg:text-[20px] md:text-[24px] sm:text-[22px] xs:text-[20px]">
+          class="lg:w-[80%] md:w-[75%] sm:w-[85%] xs:w-[90%] mt-10 mb-6 font-semibold text-[#a35e21] lg:text-[20px] md:text-[24px] sm:text-[22px] xs:text-[19px]">
           Wingko Cita
           Rasa Nusantara, Berbahan
           Labu

@@ -81,6 +81,10 @@
   .content-container {
     padding-bottom: 190px;
   }
+
+  h2 {
+    font-size: 35px;
+  }
 }
 
 @media only screen and (max-width: 923px) {
@@ -114,9 +118,6 @@
     align-items: center;
   }
 
-  h2 {
-    font-size: 35px;
-  }
 
   .content-container>.image-box {
     width: 100%;
@@ -175,6 +176,7 @@
 
     h2 {
       font-size: 28px;
+      text-align: center;
     }
 
     .content-container {
@@ -194,11 +196,6 @@
   }
 
   @media only screen and (max-width: 380px) {
-    #produkUnggulan {
-      padding: 40px 20px 0;
-      height: max-content;
-    }
-
     h2 {
       font-size: 24px;
     }
