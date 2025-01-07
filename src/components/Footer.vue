@@ -9,7 +9,7 @@ import FooterContent from '@/components/partials/FooterContent.vue'
         <h2 class="mb-8 w-[70%] mx-auto text-center text-[30px] font-bold text-[#8f6038]">
           Dapatkan Produk Kami Sekarang Juga dan Mulai Menjaga Budaya dan Kesehatan Bersama !!</h2>
 
-        <a href="#"
+        <a href="#containerPopuler"
           class="flex items-center w-[225px] mx-auto justify-center shop-now py-4 px-8 bg-[#8f6038] hover:bg-[#79522f] text-[#fdf0d5] transition-all">
           <span class="text-[18px] font-[500]">Shop now</span>
           <img src="/images/icons/next.webp" alt="arrow right" class="ms-3 w-[18px] transition-all" />

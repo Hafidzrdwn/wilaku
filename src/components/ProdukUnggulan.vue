@@ -20,7 +20,7 @@
             adalah
             perpaduan sempurna antara tradisi, inovasi, dan kesehatan.
           </p>
-          <a href="www.google.com"
+          <a href="#containerPopuler"
             class="mt-6 group inline-block w-[175px] py-[10px] px-[20px] rounded-[25px] btn-pesan bg-[#8f6038] hover:bg-[#7e5531] transition-all text-[#fdf0d5] hover:text-[#fff6e3] font-[600] text-center text-[17px]">
             Pesan <span class="group-hover:ms-[7px] transition-all ms-1">>></span>
           </a>

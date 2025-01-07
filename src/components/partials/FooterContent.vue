@@ -1,9 +1,15 @@
+<script setup>
+const showAlert = () => {
+  alert('Coming Soon..');
+}
+</script>
+
 <template>
   <footer class="w-full px-16 mx-auto footer-container">
     <div class="w-full py-6 mx-auto lg:py-8 inner-container">
       <div class="md:flex md:justify-between inner-content">
         <div class="mb-6 w-[40%] md:mb-0 detail-container">
-          <a href="https://flowbite.com/" class="inline-block mb-8">
+          <a href="#containerHero" class="inline-block mb-8">
             <div class="flex items-center">
               <img src="/images/footer-logo.webp" class="h-11 me-3" alt="Wilaku Logo" />
               <span class="self-center text-[20px] text-[#a35e21] font-[700] whitespace-nowrap">CV SANDYA ADI INDONESIA
@@ -21,7 +27,7 @@
             <h2 class="mb-6 text-[17px] font-semibold text-[#a35e21] uppercase">Kontak Kami</h2>
             <ul class="font-medium text-[#a35e21]">
               <li class="mb-4">
-                <a href="" class="flex items-center hover:underline">
+                <a :href="`https://wa.me/6285746055576`" target="_blank" class="flex items-center hover:underline">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" class="me-2" viewBox="0 0 15 16">
                     <path fill="currentColor"
                       d="M10.38 1.52c-.44.05-.79.41-.85.85l-.77 3.27c-.11.46.12.94.55 1.14l.59.27C9.46 8.2 8.49 8.99 8.49 8.99s-.8.97-1.94 1.41l-.27-.59a1 1 0 0 0-1.14-.55l-3.27.77c-.44.06-.8.41-.85.85c-.1.82-.07 2.1.85 2.78c0 0 4.15 2.92 9.19-2.12s2.12-9.19 2.12-9.19c-.69-.92-1.97-.94-2.78-.85Z" />
@@ -30,7 +36,7 @@
                 </a>
               </li>
               <li class="mb-4">
-                <a href="" class="flex items-center hover:underline">
+                <a href="#" @click.prevent="showAlert" class="flex items-center hover:underline">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" class="me-2" viewBox="0 0 24 24">
                     <path fill="currentColor"
                       d="M12 13a5 5 0 0 1-5-5h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2a5 5 0 0 1-5 5m0-10a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3m7 3h-2a5 5 0 0 0-5-5a5 5 0 0 0-5 5H5c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2" />
@@ -39,7 +45,7 @@
                 </a>
               </li>
               <li>
-                <a href="" class="flex items-center hover:underline">
+                <a href="mailto:sandyaadiidn@gmail.com" target="_blank" class="flex items-center hover:underline">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" class="me-2" viewBox="0 0 24 24">
                     <path fill="currentColor"
                       d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z" />
@@ -53,16 +59,16 @@
             <h2 class="mb-6 text-[17px] font-semibold text-[#a35e21] uppercase">Tautan Terkait</h2>
             <ul class="font-medium text-[#a35e21]">
               <li class="mb-4">
-                <a href="#" class="hover:underline">Services</a>
+                <a href="#" @click.prevent="showAlert" class="hover:underline">Services</a>
               </li>
               <li class="mb-4">
-                <a href="#" class="hover:underline">Tim Kami</a>
+                <a href="#" @click.prevent="showAlert" class="hover:underline">Tim Kami</a>
               </li>
               <li class="mb-4">
-                <a href="#" class="hover:underline">Portfolio</a>
+                <a href="#" @click.prevent="showAlert" class="hover:underline">Portfolio</a>
               </li>
               <li>
-                <a href="#" class="hover:underline">Blog</a>
+                <a href="#" @click.prevent="showAlert" class="hover:underline">Blog</a>
               </li>
             </ul>
           </div>

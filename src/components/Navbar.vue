@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import timeToText from '@/helpers/time.js'
 
 const listItems = ref([
   { name: 'Home', link: 'containerHero' },
@@ -10,6 +11,13 @@ const listItems = ref([
 
 let offset = ref(90)
 const scrollTo = (targetId) => {
+  if (targetId === '#') {
+    const greet = timeToText()
+    const txt = encodeURIComponent(`Halo Selamat ${greet}, Salam kenal, saya ingin bertanya-tanya mengenai produk WILAKU..`)
+    window.open('https://wa.me/6285746055576?text=' + txt, '_blank')
+    return
+  }
+
   const targetElement = document.getElementById(targetId);
   if (targetElement) {
     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
@@ -25,7 +33,7 @@ const scrollTo = (targetId) => {
 <template>
   <nav class="sticky top-0 z-20 w-full bg-[#8f6038] xl:px-16 lg:px-14 md:px-6 sm:px-0 start-0">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <a href="#containerHero" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img class="w-[50px] md:w-[60px]" src="/images/navbar_logo.webp" alt="logo navbar wilaku">
         <div class="logo-brand">
           <p class="brand-header font-[700] text-[#fdf0d5] text-[14px] md:text-[16px]">CV SANDYA ADI INDONESIA</p>

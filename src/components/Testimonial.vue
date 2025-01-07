@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import TestimoniCard from '@/components/partials/TestimoniCard.vue'
+import timeToText from '@/helpers/time.js'
 
 const users = ref([
   {
@@ -33,6 +34,8 @@ const users = ref([
   }
 ])
 
+const greet = timeToText()
+const txt = encodeURIComponent(`Halo Selamat ${greet}, Salam kenal, saya ingin bertanya-tanya mengenai produk WILAKU..`)
 </script>
 
 <template>
@@ -51,7 +54,7 @@ const users = ref([
 
           <p class="text-[22px] font-[600] mb-7">Anda masih ragu dengan produk kami?
             Yuk kita ngobrol bersama</p>
-          <a href="www.google.com"
+          <a :href="`https://wa.me/6285746055576?text=${txt}`" target="_blank"
             class="btn-chat inline-block w-full py-[10px] px-[20px] rounded-[25px] bg-[#ffb923] hover:bg-[#f7b934] transition-all text-[#a35e21] font-[600] text-center text-[17px]">
             Chat Admin <span class="transition-all ms-1">>></span>
           </a>

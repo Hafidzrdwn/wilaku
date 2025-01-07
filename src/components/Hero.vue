@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+
+// url encoded text
+const txt = encodeURIComponent('Halo, saya ingin memesan Wingko Lamongan!')
+
+</script>
+
 <template>
   <div id="containerHero">
     <section class="relative flex flex-col-reverse items-center justify-between lg:flex-row">
@@ -15,7 +23,7 @@
           yang
           Sehat untuk
           Semuanya.</h4>
-        <a href="#"
+        <a href="#containerPopuler"
           class="p-4 font-bold btn-hero w-[90%] hover:w-full text-[#a35e21] lg:text-[18px] md:text-[18px] sm:text-[18px] xs:text-[17px]">
           PESAN SEKARANG
           <span class="ms-1">>></span>
@@ -26,8 +34,6 @@
   </div>
 </template>
 
-<script setup>
-</script>
 
 <style scoped>
 .image-container {
