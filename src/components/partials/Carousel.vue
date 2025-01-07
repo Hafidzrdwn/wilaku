@@ -31,7 +31,7 @@ onMounted(() => {
     </div>
     <!-- Slider controls -->
     <button type="button"
-      class="btn-prev absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer start-[-25px] group focus:outline-none"
+      class="btn-prev absolute top-0 z-30 flex items-center justify-center h-full cursor-pointer start-[-25px] group focus:outline-none"
       data-carousel-prev>
       <span
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#a35e21]/75 group-hover:bg-[#a35e21]/100 group-focus:ring-4 group-focus:ring-[#fdf0d5] group-focus:outline-none">
@@ -44,7 +44,7 @@ onMounted(() => {
       </span>
     </button>
     <button type="button"
-      class="btn-next absolute top-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer end-[-25px] group focus:outline-none"
+      class="btn-next absolute top-0 z-30 flex items-center justify-center h-full cursor-pointer end-[-25px] group focus:outline-none"
       data-carousel-next>
       <span
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#a35e21]/75 group-hover:bg-[#a35e21]/100 group-focus:ring-4 group-focus:ring-[#fdf0d5] group-focus:outline-none">
@@ -119,11 +119,11 @@ onMounted(() => {
   }
 
   .btn-prev {
-    left: -50px;
+    left: -30px;
   }
 
   .btn-next {
-    right: -50px;
+    right: -30px;
   }
 
   .btn-prev>span,
@@ -156,11 +156,11 @@ onMounted(() => {
   }
 
   .btn-prev {
-    left: -30px;
+    left: -20px;
   }
 
   .btn-next {
-    right: -30px;
+    right: -20px;
   }
 
   .btn-prev>span,
