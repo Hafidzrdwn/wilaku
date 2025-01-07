@@ -1,12 +1,14 @@
 <script setup>
 import MasonryGallery from '@/components/partials/MasonryGallery.vue'
+
+const showAlert = () => alert('Coming Soon...')
+
 </script>
 
 <template>
   <div id="containerSubscribe" class="relative w-full">
-    <section id="subscribe" class="flex items-center justify-between min-h-screen py-14">
-      <div class="flex flex-col justify-center w-1/2 ps-16 subscribe-detail pe-12">
-
+    <section id="subscribe" class="flex min-h-screen">
+      <div class="flex flex-col justify-center w-1/2 ps-16 subscribe-detail pe-12 py-14">
         <img src="/images/sdgs.webp" alt="sdgs icons" class="w-[300px]">
         <h2 class="text-[30px] mt-3 font-bold text-[#8f6038]">
           Bergabung Keanggotaan Kami
@@ -40,16 +42,15 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
           </button>
         </div>
       </div>
-      <div class="relative w-1/2 image-gallery ps-10 pe-16">
+      <div class="relative flex flex-col justify-center w-1/2 image-gallery ps-10 pe-16 py-14">
         <MasonryGallery />
-        <a href="#"
+        <a href="" @click.prevent="showAlert"
           class="p-4 mt-6 font-bold btn-viewmore w-[90%] hover:w-full text-[#a35e21] lg:text-[18px] md:text-[18px] sm:text-[18px] xs:text-[17px]">
           View More Photo
           <span class="ms-1">>></span>
         </a>
       </div>
     </section>
-    <!-- <div class="bg-overlay bg-[#b5875499] w-1/2 h-full absolute top-0 right-0 z-[-1]"></div> -->
   </div>
 </template>
 
@@ -74,7 +75,7 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
 .image-gallery::before {
   content: '';
   background-color: #b5875499;
-  width: 50%;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -125,6 +126,7 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
     justify-content: center;
     align-items: center;
     padding-bottom: 0;
+    padding-top: 56px;
   }
 
   .subscribe-detail {
