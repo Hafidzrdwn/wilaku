@@ -207,7 +207,6 @@ const users = ref([
     font-size: 22px;
   }
 
-
   .content-container {
     padding: 0 20px 0;
   }
@@ -219,6 +218,12 @@ const users = ref([
   .testimoni-illustration {
     top: 140px;
     width: 50px;
+  }
+}
+
+@media only screen and (max-width: 405px) {
+  .bg-overlay {
+    height: 25em;
   }
 }
 </style>

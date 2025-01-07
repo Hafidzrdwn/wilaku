@@ -1,21 +1,23 @@
 <template>
-  <footer class="w-full px-16 pt-12 mx-auto">
-    <div class="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
-      <div class="md:flex md:justify-between">
-        <div class="w-1/2 mb-6 md:mb-0">
-          <a href="https://flowbite.com/" class="flex items-center mb-8">
-            <img src="/images/footer-logo.webp" class="h-11 me-3" alt="Wilaku Logo" />
-            <span class="self-center text-[20px] text-[#a35e21] font-[700] whitespace-nowrap">CV SANDYA ADI INDONESIA
-            </span>
+  <footer class="w-full px-16 mx-auto footer-container">
+    <div class="w-full py-6 mx-auto lg:py-8 inner-container">
+      <div class="md:flex md:justify-between inner-content">
+        <div class="mb-6 w-[40%] md:mb-0 detail-container">
+          <a href="https://flowbite.com/" class="inline-block mb-8">
+            <div class="flex items-center">
+              <img src="/images/footer-logo.webp" class="h-11 me-3" alt="Wilaku Logo" />
+              <span class="self-center text-[20px] text-[#a35e21] font-[700] whitespace-nowrap">CV SANDYA ADI INDONESIA
+              </span>
+            </div>
           </a>
-          <p class="w-[80%] text-[15px] text-[#a35e21] text-justify font-[500]">
+          <p class="text-[15px] text-[#a35e21] text-justify font-[500]">
             CV Sandya Adi Indonesia adalah perusahaan makanan dan minuman asal Lamongan yang berdiri sejak 2023 di Jawa
             Timur. Mengutamakan bahan alami dan cita rasa lokal, perusahaan ini berkomitmen menghadirkan inovasi kuliner
             sehat sekaligus melestarikan warisan budaya Indonesia.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-16 pt-2">
-          <div>
+        <div class="grid grid-cols-[1fr_0.8fr] gap-14 pt-2 link-container">
+          <div class="contact">
             <h2 class="mb-6 text-[17px] font-semibold text-[#a35e21] uppercase">Kontak Kami</h2>
             <ul class="font-medium text-[#a35e21]">
               <li class="mb-4">
@@ -47,7 +49,7 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="link">
             <h2 class="mb-6 text-[17px] font-semibold text-[#a35e21] uppercase">Tautan Terkait</h2>
             <ul class="font-medium text-[#a35e21]">
               <li class="mb-4">
@@ -92,3 +94,83 @@
     </div>
   </footer>
 </template>
+
+<style scoped>
+@media only screen and (max-width: 1050px) {
+  .detail-container {
+    width: 40%;
+  }
+
+  .link-container {
+    gap: 2rem;
+    grid-template-columns: 1fr .7fr;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .footer-container {
+    padding: 0 2.5rem;
+  }
+
+  .detail-container {
+    width: 45%;
+  }
+
+  .link-container {
+    gap: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .inner-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .detail-container {
+    width: 100%;
+  }
+
+  .detail-container>p {
+    font-size: 17px;
+  }
+
+  .link-container {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .link-container {
+    grid-template-columns: 1fr .7fr;
+    gap: 4rem;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .link-container {
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .link-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .detail-container>p {
+    font-size: 16px;
+  }
+
+  .contact>h2,
+  .link>h2 {
+    margin-bottom: 1rem;
+  }
+}
+</style>

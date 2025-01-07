@@ -4,21 +4,21 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
 
 <template>
   <div id="containerSubscribe" class="relative w-full">
-    <section id="subscribe" class="flex items-center justify-between min-h-screen px-16 py-14">
-      <div class="flex flex-col justify-center w-1/2 subscribe-detail">
+    <section id="subscribe" class="flex items-center justify-between min-h-screen py-14">
+      <div class="flex flex-col justify-center w-1/2 ps-16 subscribe-detail pe-12">
 
         <img src="/images/sdgs.webp" alt="sdgs icons" class="w-[300px]">
-        <h2 class="text-[30px] mt-2 font-bold text-[#8f6038]">
+        <h2 class="text-[30px] mt-3 font-bold text-[#8f6038]">
           Bergabung Keanggotaan Kami
         </h2>
-        <p class="text-[#8f6038] mt-3 font-[500] text-[18px] text-justify w-[80%] leading-7">Kami mencari orang-orang
+        <p class="text-[#8f6038] mt-3 font-[500] text-[18px] text-justify leading-7">Kami mencari orang-orang
           yang
           bertekad
           untuk terus
           mendukung
           nilai budaya lokal
           indonesia melalui produk maupun kegiatan dukungan sosial kami bersama, yuk jadi pendukung bersama kami!</p>
-        <div data-element="fields" data-stacked="false" class="flex items-center w-full max-w-md mt-4 formkit-fields">
+        <div class="flex items-center w-full mt-6 h-max formkit-fields">
           <div class="relative w-full mr-3 formkit-field">
             <div class="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
               <svg class="w-[22px] h-[22px] text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -31,16 +31,16 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
               </svg>
             </div>
             <input id="member_email"
-              class="block w-full py-[15px] pl-12 text-[17px] text-[#a35e21] border-[5px] border-[#a35e21] formkit-input bg-white/40 placeholder-[#a35e21a2] focus:border-[#a35e21] focus:outline-none focus:ring-0"
+              class="block h-full w-full py-[15px] pl-12 text-[17px] text-[#a35e21] border-[5px] border-[#a35e21] formkit-input bg-white/40 placeholder-[#a35e21a2] focus:border-[#a35e21] focus:outline-none focus:ring-0"
               name="email_address" aria-label="Email Address" placeholder="Masukkan Alamat Email..." type="email">
           </div>
-          <button data-element="submit" class="formkit-submit active:scale-[0.9] transition-all">
-            <span
-              class="px-5 py-[20px] text-[17px] font-[500] text-center text-[#fdf0d5] bg-[#a35e21] cursor-pointer hover:bg-[#a06735]">Subscribe</span>
+          <button data-element="submit"
+            class="formkit-submit active:scale-[0.9] transition-all text-center text-[#fdf0d5] px-5 py-[20px] text-[17px] font-[500] bg-[#a35e21] hover:bg-[#a06735]">
+            <span>Subscribe now</span>
           </button>
         </div>
       </div>
-      <div class="w-1/2 image-gallery ps-10">
+      <div class="relative w-1/2 image-gallery ps-10 pe-16">
         <MasonryGallery />
         <a href="#"
           class="p-4 mt-6 font-bold btn-viewmore w-[90%] hover:w-full text-[#a35e21] lg:text-[18px] md:text-[18px] sm:text-[18px] xs:text-[17px]">
@@ -49,7 +49,7 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
         </a>
       </div>
     </section>
-    <div class="bg-overlay"></div>
+    <!-- <div class="bg-overlay bg-[#b5875499] w-1/2 h-full absolute top-0 right-0 z-[-1]"></div> -->
   </div>
 </template>
 
@@ -71,8 +71,9 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
   z-index: -1;
 }
 
-.bg-overlay {
-  background: rgb(181, 135, 84, 0.6);
+.image-gallery::before {
+  content: '';
+  background-color: #b5875499;
   width: 50%;
   height: 100%;
   position: absolute;
@@ -97,5 +98,151 @@ import MasonryGallery from '@/components/partials/MasonryGallery.vue'
 
 .btn-viewmore:hover span {
   margin-left: 12px;
+}
+
+.formkit-submit {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1185px) {
+  .formkit-fields {
+    flex-direction: column;
+  }
+
+  .formkit-field {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .formkit-submit {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  #subscribe {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .subscribe-detail {
+    width: 100%;
+    padding-right: 0;
+    padding: 0 64px;
+    margin-bottom: 35px;
+  }
+
+  .subscribe-detail>img {
+    width: 350px;
+  }
+
+  .formkit-fields {
+    flex-direction: row;
+  }
+
+  .formkit-field {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+
+  .formkit-submit {
+    width: 50%;
+  }
+
+  .image-gallery {
+    width: 100%;
+    padding-left: 0;
+    padding: 35px 64px 56px;
+  }
+
+  .image-gallery::before {
+    width: 100%;
+    position: absolute;
+    top: unset;
+    bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-overlay {
+    display: none;
+  }
+
+  .subscribe-detail {
+    padding: 0 64px;
+    margin-bottom: 35px;
+  }
+
+  .subscribe-detail>h2 {
+    font-size: 28px;
+  }
+
+  .image-gallery {
+    padding: 35px 64px 56px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .subscribe-detail {
+    padding: 0 40px;
+  }
+
+  .image-gallery {
+    padding: 35px 40px 56px;
+  }
+
+  .formkit-fields {
+    flex-direction: column;
+  }
+
+  .formkit-field {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .formkit-submit {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+
+  .subscribe-detail,
+  .image-gallery {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .subscribe-detail>img {
+    width: 250px;
+  }
+
+  .subscribe-detail>h2 {
+    font-size: 24px;
+  }
+
+  .subscribe-detail>p {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .subscribe-detail>img {
+    width: 225px;
+  }
+
+  .subscribe-detail>h2 {
+    font-size: 22px;
+  }
+
+  .formkit-field>input {
+    font-size: 18px;
+  }
+
+  .formkit-submit>span {
+    font-size: 18px;
+  }
 }
 </style>
