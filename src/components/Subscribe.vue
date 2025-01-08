@@ -1,8 +1,50 @@
 <script setup>
+import { ref } from 'vue'
 import MasonryGallery from '@/components/partials/MasonryGallery.vue'
 
 const showAlert = () => alert('Coming Soon...')
 
+const email = ref('')
+const isError = ref(false)
+const isLoading = ref(false)
+
+const subscribeNow = () => {
+  isLoading.value = true
+  isError.value = false
+  const emailValue = email.value
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  if (!emailRegex.test(emailValue)) {
+    isError.value = true
+    isLoading.value = false
+    return
+  }
+
+  const data = {
+    Date: new Date().toLocaleString('id-ID', { dateStyle: 'short', timeStyle: 'medium', hour12: false }),
+    Email: emailValue
+  };
+  // make a form data and send to sheet
+  const formData = new FormData()
+  formData.append('Date', data.Date)
+  formData.append('Email', data.Email)
+  fetch(`https://script.google.com/macros/s/${import.meta.env.VITE_APP_SCRIPT_KEY}/exec`, {
+    method: 'POST',
+    body: formData
+  }).then(res => {
+    isLoading.value = false
+    if (res.status === 200) {
+      alert('Subscribe Success! Thank you for subscribing.')
+      email.value = ''
+      isError.value = false
+    } else {
+      alert('Failed to subscribe, please try again later.')
+    }
+  }).catch(err => {
+    console.error(err)
+    alert('Failed to subscribe, please try again later.')
+  })
+}
 </script>
 
 <template>
@@ -34,13 +76,16 @@ const showAlert = () => alert('Coming Soon...')
             </div>
             <input id="member_email"
               class="block h-full w-full py-[15px] pl-12 text-[17px] text-[#a35e21] border-[5px] border-[#a35e21] formkit-input bg-white/40 placeholder-[#a35e21a2] focus:border-[#a35e21] focus:outline-none focus:ring-0"
-              name="email_address" aria-label="Email Address" placeholder="Masukkan Alamat Email..." type="email">
+              name="email_address" aria-label="Email Address" placeholder="Masukkan Alamat Email..." type="text"
+              v-model="email">
           </div>
-          <button data-element="submit"
-            class="formkit-submit active:scale-[0.9] transition-all text-center text-[#fdf0d5] px-5 py-[20px] text-[17px] font-[500] bg-[#a35e21] hover:bg-[#a06735]">
-            <span>Subscribe now</span>
+          <button data-element="submit" @click.prevent="subscribeNow" :disabled="isLoading"
+            class="formkit-submit active:scale-[0.9] transition-all text-center text-[#fdf0d5] px-5 py-[20px] text-[17px] font-[500] bg-[#a35e21] hover:bg-[#a06735] disabled:bg[#a35e21]/60 disabled:cursor-not-allowed">
+            <span>{{ isLoading ? 'Loading...' : 'Subscribe now' }}</span>
           </button>
         </div>
+        <p v-if="isError" id="filled_error_help" class="mt-2 text-red-600 text-md dark:text-red-400"><span
+            class="font-medium">Error!</span> Masukkan alamat email yang valid.</p>
       </div>
       <div class="relative flex flex-col justify-center w-1/2 image-gallery ps-10 pe-16 py-14">
         <MasonryGallery />
