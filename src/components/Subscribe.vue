@@ -41,6 +41,9 @@ const subscribeNow = () => {
       alert('Failed to subscribe, please try again later.')
     }
   }).catch(err => {
+    isLoading.value = false
+    isError.value = false
+    email.value = ''
     console.error(err)
     alert('Failed to subscribe, please try again later.')
   })
