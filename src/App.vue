@@ -8,12 +8,34 @@ import Social from '@/components/Social.vue'
 import Subscribe from '@/components/Subscribe.vue'
 import Footer from '@/components/Footer.vue'
 
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
+import CartBadge from '@/components/partials/CartBadge.vue'
+import ModalComponent from '@/components/partials/Modal.vue'
+import { countItems } from '@/helpers/product.js'
+
+import { onMounted, computed, watch } from 'vue'
+import { initFlowbite, Modal, initModals } from 'flowbite'
 
 onMounted(() => {
   initFlowbite();
+  initModals();
 })
+
+const countProduct = computed(() => countItems())
+
+// hide modal when cart is empty
+watch(
+  countProduct,
+  (newCount) => {
+    if (newCount === 0) {
+      const modalElement = document.getElementById('static-modal');
+      if (modalElement) {
+        const modalInstance = new Modal(modalElement);
+        modalInstance.hide();
+      }
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
@@ -25,6 +47,9 @@ onMounted(() => {
   <Social />
   <Subscribe />
   <Footer />
+
+  <ModalComponent />
+  <CartBadge v-show="countProduct > 0" :count="countProduct" />
 </template>
 
 <style scoped></style>

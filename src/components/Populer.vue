@@ -1,33 +1,8 @@
 <script setup>
-import { ref } from 'vue'
 import ProductCard from '@/components/partials/ProductCard.vue'
+import { products as productsData } from '@/helpers/product.js'
 
-const products = ref([
-  {
-    id: 1,
-    name: 'WILA<br>(WINGKO LABU)',
-    price: '15.000',
-    image: '1.webp'
-  },
-  {
-    id: 2,
-    name: 'SANDRINK<br>(TROPICAL BLISS)',
-    price: '12.000',
-    image: '2.webp'
-  },
-  {
-    id: 3,
-    name: 'SANDRINK<br>(SWEET SUMMER SPLASH)',
-    price: '12.000',
-    image: '3.webp'
-  },
-  {
-    id: 4,
-    name: 'SANDRINK<br>(DETOX JUICE)',
-    price: '15.000',
-    image: '4.webp'
-  }
-])
+const products = productsData
 </script>
 
 <template>
@@ -36,7 +11,7 @@ const products = ref([
       <h2 class="mb-14 ms-16 text-[30px] font-bold text-[#8f6038]">Produk Populer</h2>
       <div class="w-full h-[200px] box-highlight bg-[#b58754] relative">
         <div class="flex flex-wrap items-center justify-between px-16 content-container">
-          <ProductCard v-for="p in products" :key="p.id" :name="p.name" :price="p.price" :img="p.image" />
+          <ProductCard v-for="p in products" :key="p.id" v-bind="p" />
         </div>
       </div>
 
@@ -67,7 +42,6 @@ const products = ref([
   #produkPopuler {
     padding-bottom: 780px;
     background-position-y: 0;
-    z-index: -1;
   }
 
   .content-container {
